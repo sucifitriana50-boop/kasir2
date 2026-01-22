@@ -58,7 +58,7 @@ $data = mysqli_query($conn, "SELECT * FROM tbl_barang");
 <div class="card">
     <div class="card-header">
         <h3>List Produk</h3>
-       <a href="dashboard.php?page=produk">List Produk</a>
+       <a href="dashboard.php?page=tambah-produk">List Produk</a>
 
     </div>
     <table>
