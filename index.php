@@ -4,7 +4,7 @@ include "koneksi.php"; // pastikan file koneksi ada
 
 $error = "";
 
-// Proses login
+// Proses slogin
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'] ?? '';
     $password = $_POST['password'] ?? '';

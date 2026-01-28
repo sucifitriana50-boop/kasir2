@@ -1,5 +1,6 @@
 <?php
-include '../koneksi.php';
+include __DIR__ . '/../koneksi.php';
+
 $data = mysqli_query($conn, "SELECT * FROM tbl_barang");
 ?>
  
@@ -49,7 +50,6 @@ $data = mysqli_query($conn, "SELECT * FROM tbl_barang");
         border-bottom: 1px solid #ddd;
         text-align: center;
     }
-
     th {
         background: #f8f8f8;
     }
@@ -58,8 +58,7 @@ $data = mysqli_query($conn, "SELECT * FROM tbl_barang");
 <div class="card">
     <div class="card-header">
         <h3>List Produk</h3>
-       <a href="dashboard.php?page=tambah-produk">List Produk</a>
-
+        <a href="dashboard.php?page=tambah" class="btn btn-tambah">+ Tambah Produk</a>
     </div>
     <table>
         <tr>
@@ -96,4 +95,4 @@ btn-edit">Edit</a>
             </tr>
         <?php } ?>
     </table>
-
+</div>

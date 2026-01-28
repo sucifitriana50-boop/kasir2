@@ -1,6 +1,6 @@
 <?php
-include __DIR__ . '/../koneksi.php';
-$data = mysqli_query($conn, "SELECT * FROM tbl_barang");
+include __DIR__ .'koneksi.php';
+$data = mysqli_query($conn, "SELECT * FROM barang");
 
 if (!$data) {
     die("Query error: " . mysqli_error($conn));

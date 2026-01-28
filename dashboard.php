@@ -101,13 +101,15 @@ session_start();
 <body>
  
     <div class="sidebar">
-        <h2>Dashboard</h2>
-        <a href="#">Home</a>
-        <a href="dashboard.php?page=produk">List Produk</a>
-         <a href="#">Customer</a>
-        <a href="#">Transaksi</a>
-        <a href="#">Laporan</a>
-    </div>
+    <h2>Dashboard</h2>
+    <a href="dashboard.php?page=home">Home</a>
+    <a href="dashboard.php?page=list">List Produk</a>
+    <a href="dashboard.php?page=tambah">Tambah Produk</a>
+    <a href="dashboard.php?page=customer">Customer</a>
+    <a href="dashboard.php?page=transaksi">Transaksi</a>
+    <a href="dashboard.php?page=laporan">Laporan</a>
+</div>
+
     <div class="header">
         <div class="dropdown">
             <div class="profile-btn" onclick="toggleMenu()">Profile ▾</div>
@@ -118,18 +120,17 @@ session_start();
         </div>
     </div>
     <div class="content">
-        <?php
-        $page = $_GET['page'];
+       <?php
+$page = $_GET['page'] ?? 'home';
+$file = "pages/$page.php";
 
-if ($page == 'produk') {
-    include 'pages/produk.php';
+if (file_exists($file)) {
+    include $file;
+} else {
+    echo "<h3>Halaman tidak ditemukan</h3>";
 }
+?>
 
-       
-        else {
-            echo "<h2>Welcome Dashboard</h2>";
-        }
-        ?>
     </div>
  
  
